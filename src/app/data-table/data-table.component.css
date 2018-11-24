@@ -1,0 +1,16 @@
+.grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+  }
+  .sidebar {
+    background: green
+  }
+  header {
+    background: rgb(0, 0, 0);
+    height: 1em;
+    color: white;
+    text-align: right;
+  }
+  .datatable {
+    background: pink;
+  }

@@ -1,0 +1,31 @@
+<ngx-datatable
+    #table
+    class="material"
+    [rows]="rows"
+    [columns]="[{name:'Name'},{name:'Gender'},{name:'Company'} , {name:'Age'}]"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [limit]="10"
+  >
+  <ngx-datatable-footer>
+    <ng-template
+      let-rowCount="rowCount"
+      let-pageSize="pageSize"
+      let-selectedCount="selectedCount"
+      let-curPage="curPage"
+      let-offset="offset"
+      ngx-datatable-footer-template
+    >
+      <app-paginator
+        [page]="curPage"
+        [visiblePagesCount]="currentVisible"
+        [size]="pageSize"
+        [count]="rowCount"
+        [hidden]="false"
+        (change)="table.onFooterPage($event)">
+      </app-paginator>
+    </ng-template>
+  </ngx-datatable-footer>
+</ngx-datatable>
